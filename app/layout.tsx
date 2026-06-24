@@ -13,6 +13,11 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Propia",
   description: "Tu plataforma inmobiliaria de confianza",
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
