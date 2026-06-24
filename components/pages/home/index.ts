@@ -1,0 +1,10 @@
+export { HeroSection } from "./hero-section";
+export { QuickCategoriesSection } from "./quick-categories-section";
+export { FeaturedPropertiesSection } from "./featured-properties-section";
+export { SearchByLocationSection } from "./search-by-location-section";
+export { NewProjectsSection } from "./new-projects-section";
+export { SellWithUsSection } from "./sell-with-us-section";
+export { WhyChooseUsSection } from "./why-choose-us-section";
+export { FeaturedAgentsSection } from "./featured-agents-section";
+export { BlogSection } from "./blog-section";
+export { FinalCtaSection } from "./final-cta-section";
