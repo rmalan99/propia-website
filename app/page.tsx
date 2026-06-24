@@ -25,7 +25,7 @@ import {
 
 export default function Page() {
   return (
-    <Container>
+    <>
       {/* Hero Section */}
       <section className="relative h-[700px] w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -38,7 +38,7 @@ export default function Page() {
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
+        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 max-w-3xl">
             Encuentra la propiedad ideal para ti
           </h1>
@@ -91,6 +91,7 @@ export default function Page() {
 
       {/* Quick Categories */}
       <section className="py-16">
+        <Container>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: Building, label: "Apartamentos", count: "1,240 propiedades" },
@@ -113,10 +114,12 @@ export default function Page() {
               </a>
             ))}
           </div>
+        </Container>
       </section>
 
       {/* Featured Properties */}
       <section className="py-16 bg-accent">
+        <Container>
           <div className="flex justify-between items-end mb-12">
             <div>
               <span className="text-secondary font-semibold tracking-wider text-xs uppercase">
@@ -224,10 +227,12 @@ export default function Page() {
               </div>
             ))}
           </div>
+        </Container>
       </section>
 
       {/* Search by Location */}
       <section className="py-16">
+        <Container>
           <h2 className="text-3xl font-semibold text-center mb-12">
             Explora las mejores zonas
           </h2>
@@ -277,10 +282,12 @@ export default function Page() {
               </div>
             ))}
           </div>
+        </Container>
       </section>
 
       {/* New Projects */}
       <section className="bg-primary text-primary-foreground py-12">
+        <Container>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-5">
               <span className="text-secondary font-semibold tracking-[0.3em] text-xs uppercase mb-4 block">
@@ -325,10 +332,12 @@ export default function Page() {
               </div>
             </div>
           </div>
+        </Container>
       </section>
 
       {/* Sell with Us */}
       <section className="py-16">
+        <Container>
           <div className="bg-accent rounded-[40px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
             <div className="relative z-10 md:w-3/5">
               <h2 className="text-3xl font-semibold mb-6">
@@ -366,10 +375,12 @@ export default function Page() {
               </div>
             </div>
           </div>
+        </Container>
       </section>
 
       {/* Why Choose Us */}
       <section className="py-16 bg-accent">
+        <Container>
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
             <div className="md:w-1/2">
               <div className="relative group">
@@ -428,10 +439,12 @@ export default function Page() {
               </div>
             </div>
           </div>
+        </Container>
       </section>
 
       {/* Featured Agents */}
       <section className="py-16">
+        <Container>
           <div className="relative rounded-[40px] overflow-hidden bg-primary text-primary-foreground">
             <div className="absolute inset-0 z-0 opacity-40">
               <Image
@@ -477,10 +490,12 @@ export default function Page() {
               </div>
             </div>
           </div>
+        </Container>
       </section>
 
       {/* Blog Section */}
       <section className="py-16 bg-accent">
+        <Container>
           <h2 className="text-3xl font-semibold text-center mb-16">
             Consejos y Tendencias del Mercado
           </h2>
@@ -534,11 +549,12 @@ export default function Page() {
               </article>
             ))}
           </div>
+        </Container>
       </section>
 
       {/* Final CTA */}
       <section className="py-24 bg-accent">
-        <div className="max-w-4xl text-center">
+        <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             ¿Listo para encontrar tu próxima propiedad?
           </h2>
@@ -556,6 +572,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </Container>
+    </>
   );
 }
