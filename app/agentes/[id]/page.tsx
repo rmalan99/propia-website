@@ -1,4 +1,4 @@
-import ScaffoldPage from "@/components/scaffold-page";
+import ScaffoldPage from "@/components/scaffold/scaffold-page";
 
 interface Props {
   params: Promise<{ id: string }>;
