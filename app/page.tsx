@@ -25,7 +25,7 @@ import {
 
 export default function Page() {
   return (
-    <>
+    <Container>
       {/* Hero Section */}
       <section className="relative h-[700px] w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -572,6 +572,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </>
+    </Container>
   );
 }
