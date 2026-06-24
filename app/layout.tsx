@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className="font-sans antialiased min-h-screen bg-background text-foreground">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
