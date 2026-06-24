@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -48,19 +49,22 @@ export function Header() {
 
   return (
     <header className="border-b border-border/80 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <Container className="flex h-18 items-center justify-between gap-6">
-        <Link
-          href="/"
-          className="shrink-0 text-xl font-semibold tracking-tight text-primary transition-colors hover:text-accent"
-        >
-          LexuryRealestate
+      <Container className="grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-6">
+        <Link href="/" className="shrink-0 flex items-center">
+          <Image
+            src="/logo.svg"
+            alt="Propia"
+            width={127}
+            height={44}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
-        <div className="flex items-center gap-4 lg:gap-8">
-          <nav
-            aria-label="Navegación principal"
-            className="hidden items-center gap-1 md:flex"
-          >
+        <nav
+          aria-label="Navegación principal"
+          className="hidden items-center gap-1 md:flex"
+        >
             {navigationItems.map((item) => (
               <Link
                 key={item.label}
@@ -77,6 +81,7 @@ export function Header() {
             ))}
           </nav>
 
+        <div className="flex items-center justify-end gap-4 lg:gap-8">
           <Button asChild className="hidden md:inline-flex" size="sm">
             <Link href="/login">Login</Link>
           </Button>
@@ -98,8 +103,15 @@ export function Header() {
               className="w-[82vw] max-w-sm flex flex-col gap-4"
             >
               <SheetHeader>
-                <SheetTitle className="text-base font-semibold text-primary">
-                  LexuryRealestate
+                <SheetTitle className="flex items-center">
+                  <Image
+                    src="/logo.svg"
+                    alt="Propia"
+                    width={127}
+                    height={44}
+                    className="h-9 w-auto"
+                    priority
+                  />
                 </SheetTitle>
               </SheetHeader>
 
