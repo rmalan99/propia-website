@@ -1,4 +1,6 @@
 import { Container } from "@/components/layout/container";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { imagePlaceholders } from "@/lib/image-placeholders";
 
@@ -38,10 +40,7 @@ export function SearchByLocationSection() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {locations.map((location, index) => (
-            <div
-              key={index}
-              className="relative h-96 rounded-2xl overflow-hidden group"
-            >
+            <Card key={index} className="group relative h-96 overflow-hidden rounded-2xl border-0">
               <Image
                 src={location.image}
                 alt={location.title}
@@ -54,16 +53,20 @@ export function SearchByLocationSection() {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 p-8 w-full">
+              <CardContent className="absolute bottom-0 left-0 w-full p-8 pt-8">
                 <h3 className="text-white text-xl font-semibold mb-2">
                   {location.title}
                 </h3>
                 <p className="text-white/80 mb-4 text-sm">{location.desc}</p>
-                <button className="bg-white/20 hover:bg-white/40 backdrop-blur-md text-white border border-white/50 px-6 py-2 rounded-lg text-sm transition-all">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="border-white/50 bg-white/20 text-white backdrop-blur-md hover:bg-white/35 hover:text-white"
+                >
                   Explorar zona
-                </button>
-              </div>
-            </div>
+                </Button>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </Container>

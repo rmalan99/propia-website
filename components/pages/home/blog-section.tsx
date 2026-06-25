@@ -1,4 +1,7 @@
 import { Container } from "@/components/layout/container";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { imagePlaceholders } from "@/lib/image-placeholders";
 import { ChevronRight } from "lucide-react";
@@ -31,17 +34,14 @@ type Article = (typeof articles)[number];
 
 export function BlogSection() {
   return (
-    <section className="min-h-[90vh] flex items-center py-16 bg-accent">
+    <section className="min-h-[90vh] flex items-center py-16 bg-background">
       <Container>
         <h2 className="text-3xl font-semibold text-center mb-16">
           Consejos y Tendencias del Mercado
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((article: Article, index) => (
-            <article
-              key={index}
-              className="bg-background rounded-2xl overflow-hidden group border border-border/50"
-            >
+            <Card key={index} className="group overflow-hidden rounded-2xl border-border/50 bg-background">
               <div className="h-56 overflow-hidden">
                 <Image
                   src={article.image}
@@ -56,20 +56,19 @@ export function BlogSection() {
                   loading="lazy"
                 />
               </div>
-              <div className="p-8">
-                <span className="text-secondary text-xs font-bold uppercase mb-4 block">
+              <CardContent className="p-8 pt-8">
+                <Badge variant="secondary" className="mb-4 rounded-full px-3 py-1 text-[10px] uppercase tracking-wide">
                   {article.category}
-                </span>
+                </Badge>
                 <h3 className="text-xl font-semibold mb-4">{article.title}</h3>
                 <p className="text-muted-foreground text-sm mb-6">{article.desc}</p>
-                <a
-                  href="#"
-                  className="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
-                >
-                  Leer más <ChevronRight className="h-4 w-4" />
-                </a>
-              </div>
-            </article>
+                <Button asChild variant="link" className="h-auto p-0 font-bold text-primary">
+                  <a href="#" className="flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Leer más <ChevronRight className="h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </Container>

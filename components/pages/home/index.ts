@@ -1,4 +1,5 @@
 export { HeroSection } from "./hero-section";
+export { HeroSearchForm } from "./hero-search-form";
 export { QuickCategoriesSection } from "./quick-categories-section";
 export { FeaturedPropertiesSection } from "./featured-properties-section";
 export { SearchByLocationSection } from "./search-by-location-section";

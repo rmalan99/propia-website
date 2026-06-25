@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/container";
+import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { imagePlaceholders } from "@/lib/image-placeholders";
 import { Shield, Users, MessageCircle } from "lucide-react";
@@ -23,12 +24,12 @@ const features = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="min-h-[90vh] flex items-center py-16 bg-accent">
+    <section className="min-h-[90vh] flex items-center py-16 bg-muted/35">
       <Container>
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
           <div className="md:w-1/2">
             <div className="relative group">
-              <div className="absolute -inset-4 bg-accent rounded-[40px] -z-10 transition-transform group-hover:scale-105 duration-700" />
+              <div className="absolute -inset-4 bg-secondary/55 rounded-[40px] -z-10 transition-transform group-hover:scale-105 duration-700" />
               <Image
                 src="/images/home/why-trust.avif"
                 alt="Luxury real estate"
@@ -53,10 +54,11 @@ export function WhyChooseUsSection() {
               </h2>
               <div className="space-y-6">
                 {features.map((feature) => (
-                  <div
+                  <Card
                     key={feature.title}
-                    className="group p-6 rounded-2xl border border-border/30 bg-background hover:bg-accent transition-all duration-300"
+                    className="group rounded-2xl border-border/40 bg-background transition-all duration-300 hover:bg-card"
                   >
+                    <CardContent className="p-6 pt-6">
                     <div className="flex items-start gap-6">
                       <div className="w-14 h-14 bg-primary text-primary-foreground rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                         <feature.icon className="h-6 w-6" />
@@ -66,7 +68,8 @@ export function WhyChooseUsSection() {
                         <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
                       </div>
                     </div>
-                  </div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>

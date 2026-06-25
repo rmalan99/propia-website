@@ -1,4 +1,6 @@
 import { Container } from "@/components/layout/container";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { imagePlaceholders } from "@/lib/image-placeholders";
 
@@ -29,7 +31,8 @@ export function NewProjectsSection() {
             </div>
           </div>
           <div className="md:col-span-7">
-            <div className="group relative bg-white/5 rounded-3xl p-4 border border-white/10 backdrop-blur-sm">
+            <Card className="group relative rounded-3xl border-white/10 bg-white/5 p-4 text-primary-foreground backdrop-blur-sm">
+              <CardContent className="p-0">
               <div className="relative h-[400px] overflow-hidden rounded-2xl mb-6">
                 <Image
                   src="/images/home/proyecto-legacy-tower.avif"
@@ -48,11 +51,12 @@ export function NewProjectsSection() {
                   <h3 className="text-2xl font-semibold">The Legacy Tower</h3>
                   <p className="text-white/60">Piantini, Santo Domingo</p>
                 </div>
-                <button className="bg-white text-primary px-6 py-3 rounded-xl font-bold hover:bg-white/90 transition-colors">
+                <Button type="button" variant="secondary" className="rounded-xl px-6 py-3 font-bold text-primary hover:bg-white/90">
                   Ver proyecto
-                </button>
+                </Button>
               </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </Container>

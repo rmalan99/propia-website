@@ -2,12 +2,12 @@ import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-import { PropertyCard } from "./property-card";
-import { properties } from "./mocks/properties";
+import { properties } from "../../mocks/properties";
+import { PropertyCard } from "@/components/property-card";
 
 export function FeaturedPropertiesSection() {
   return (
-    <section className="min-h-[90vh] flex items-center py-16 bg-propia-beige">
+    <section className="min-h-[90vh] flex items-center py-16 bg-background">
       <Container>
         <div className="flex justify-between items-end mb-12">
           <div>
@@ -22,7 +22,7 @@ export function FeaturedPropertiesSection() {
             </a>
           </Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {properties.map((property, index) => (
             <PropertyCard
               key={property.title}

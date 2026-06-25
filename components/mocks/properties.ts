@@ -52,4 +52,16 @@ export const properties: Property[] = [
     sqft: "120m²",
     type: "Alquiler",
   },
+  {
+    image: "/images/home/propiedad-3-apartamento.avif",
+    placeholder: imagePlaceholders["propiedad-3-apartamento"],
+    price: "$2,500 /mo",
+    badge: "Nueva",
+    title: "Luxury Sky Apartment top",
+    location: "Piantini, SD",
+    beds: 2,
+    baths: 2,
+    sqft: "120m²",
+    type: "Alquiler",
+  },
 ];

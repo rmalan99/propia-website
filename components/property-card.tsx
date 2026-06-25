@@ -4,8 +4,8 @@ import { MapPin, Bed, Bath, Maximize, Heart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Property } from "./mocks/properties";
 
-import type { Property } from "./mocks/properties";
 
 type PropertyCardProps = {
   property: Property;

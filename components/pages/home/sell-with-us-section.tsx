@@ -1,4 +1,6 @@
 import { Container } from "@/components/layout/container";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { imagePlaceholders } from "@/lib/image-placeholders";
 import { CheckCircle } from "lucide-react";
@@ -13,7 +15,8 @@ export function SellWithUsSection() {
   return (
     <section className="min-h-[90vh] flex items-center py-16">
       <Container>
-        <div className="bg-accent rounded-[40px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
+        <Card className="relative overflow-hidden rounded-[40px] border-border/60 bg-card shadow-[0_24px_80px_-48px_rgba(79,86,60,0.35)]">
+          <CardContent className="flex flex-col items-center gap-12 p-12 pt-12 md:flex-row md:p-20 md:pt-20">
           <div className="relative z-10 md:w-3/5">
             <h2 className="text-3xl font-semibold mb-6">
               ¿Quieres vender tu propiedad al mejor precio?
@@ -25,20 +28,20 @@ export function SellWithUsSection() {
             <ul className="space-y-4 mb-10">
               {features.map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-secondary" />
+                  <CheckCircle className="h-5 w-5 text-accent" />
                   <span className="font-medium">{item}</span>
                 </li>
-              ))}
-            </ul>
-            <button className="bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-shadow">
+                ))}
+              </ul>
+            <Button type="button" size="lg" className="rounded-xl px-8 font-bold hover:shadow-lg">
               Quiero vender mi propiedad
-            </button>
+            </Button>
           </div>
           <div className="md:w-2/5">
-            <div className="bg-white p-2 rounded-2xl shadow-xl rotate-3">
+            <div className="bg-background p-2 rounded-2xl shadow-xl rotate-3">
               <Image
                 src="/images/home/vender-agente.avif"
-                alt="Real estate agent"
+                alt="Real estate agent reviewing a property listing with a for sale sign"
                 width={400}
                 height={300}
                 className="rounded-xl"
@@ -50,7 +53,8 @@ export function SellWithUsSection() {
               />
             </div>
           </div>
-        </div>
+          </CardContent>
+        </Card>
       </Container>
     </section>
   );
