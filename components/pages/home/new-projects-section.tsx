@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/container";
 import Image from "next/image";
+import { imagePlaceholders } from "@/lib/image-placeholders";
 
 export function NewProjectsSection() {
   return (
@@ -31,12 +32,15 @@ export function NewProjectsSection() {
             <div className="group relative bg-white/5 rounded-3xl p-4 border border-white/10 backdrop-blur-sm">
               <div className="relative h-[400px] overflow-hidden rounded-2xl mb-6">
                 <Image
-                  src="/images/home/proyecto-legacy-tower.webp"
+                  src="/images/home/proyecto-legacy-tower.avif"
                   alt="The Legacy Tower"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   quality={85}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  placeholder="blur"
+                  blurDataURL={imagePlaceholders["proyecto-legacy-tower"]}
+                  loading="lazy"
                 />
               </div>
               <div className="flex justify-between items-center">

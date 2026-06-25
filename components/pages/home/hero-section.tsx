@@ -1,18 +1,21 @@
 import Image from "next/image";
 import { MapPin, Search } from "lucide-react";
+import { imagePlaceholders } from "@/lib/image-placeholders";
 
 export function HeroSection() {
   return (
     <section className="relative h-[700px] w-full overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/home/hero-villa.webp"
+          src="/images/home/hero-villa.avif"
           alt="Luxury villa"
           fill
           className="object-cover"
           priority
           quality={85}
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL={imagePlaceholders["hero-villa"]}
         />
         <div className="absolute inset-0 bg-black/30" />
       </div>

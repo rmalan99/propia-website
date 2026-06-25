@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/container";
 import Image from "next/image";
+import { imagePlaceholders } from "@/lib/image-placeholders";
 import { CheckCircle } from "lucide-react";
 
 const features = [
@@ -36,13 +37,16 @@ export function SellWithUsSection() {
           <div className="md:w-2/5">
             <div className="bg-white p-2 rounded-2xl shadow-xl rotate-3">
               <Image
-                src="/images/home/vender-agente.webp"
+                src="/images/home/vender-agente.avif"
                 alt="Real estate agent"
                 width={400}
                 height={300}
                 className="rounded-xl"
                 quality={85}
                 sizes="(max-width: 768px) 100vw, 400px"
+                placeholder="blur"
+                blurDataURL={imagePlaceholders["vender-agente"]}
+                loading="lazy"
               />
             </div>
           </div>

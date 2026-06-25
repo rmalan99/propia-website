@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/container";
 import Image from "next/image";
+import { imagePlaceholders } from "@/lib/image-placeholders";
 import { Globe, GraduationCap, Rocket, Headset } from "lucide-react";
 
 const benefits = [
@@ -21,6 +22,7 @@ export function FeaturedAgentsSection() {
               fill
               className="object-cover"
               sizes="100vw"
+              loading="lazy"
             />
           </div>
           <div className="relative z-10 p-12 md:p-20 flex flex-col lg:flex-row items-center gap-12">

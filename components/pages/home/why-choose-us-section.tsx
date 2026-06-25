@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/container";
 import Image from "next/image";
+import { imagePlaceholders } from "@/lib/image-placeholders";
 import { Shield, Users, MessageCircle } from "lucide-react";
 
 const features = [
@@ -29,13 +30,16 @@ export function WhyChooseUsSection() {
             <div className="relative group">
               <div className="absolute -inset-4 bg-accent rounded-[40px] -z-10 transition-transform group-hover:scale-105 duration-700" />
               <Image
-                src="/images/home/why-trust.webp"
+                src="/images/home/why-trust.avif"
                 alt="Luxury real estate"
                 width={600}
                 height={600}
                 className="w-full h-[600px] object-cover rounded-2xl shadow-xl"
                 quality={85}
                 sizes="(max-width: 768px) 100vw, 50vw"
+                placeholder="blur"
+                blurDataURL={imagePlaceholders["why-trust"]}
+                loading="lazy"
               />
             </div>
           </div>

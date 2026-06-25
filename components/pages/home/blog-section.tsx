@@ -1,27 +1,33 @@
 import { Container } from "@/components/layout/container";
 import Image from "next/image";
+import { imagePlaceholders } from "@/lib/image-placeholders";
 import { ChevronRight } from "lucide-react";
 
 const articles = [
   {
-    image: "/images/home/blog-inversion.webp",
+    image: "/images/home/blog-inversion.avif",
+    placeholder: imagePlaceholders["blog-inversion"],
     category: "Inversión",
     title: "5 Razones para invertir en Punta Cana este 2024",
     desc: "Analizamos el crecimiento turístico y las nuevas infraestructuras que impulsan el mercado...",
   },
   {
-    image: "/images/home/blog-legal.webp",
+    image: "/images/home/blog-legal.avif",
+    placeholder: imagePlaceholders["blog-legal"],
     category: "Legal",
     title: "Guía completa para extranjeros comprando en RD",
     desc: "Todo lo que necesitas saber sobre la Ley de Confotur y beneficios fiscales para inversores...",
   },
   {
-    image: "/images/home/blog-diseno.webp",
+    image: "/images/home/blog-diseno.avif",
+    placeholder: imagePlaceholders["blog-diseno"],
     category: "Diseño",
     title: "Tendencias de arquitectura sostenible en el Caribe",
     desc: "Exploramos cómo los nuevos proyectos integran materiales naturales y eficiencia energética...",
   },
 ];
+
+type Article = (typeof articles)[number];
 
 export function BlogSection() {
   return (
@@ -31,21 +37,24 @@ export function BlogSection() {
           Consejos y Tendencias del Mercado
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {articles.map((article, index) => (
+          {articles.map((article: Article, index) => (
             <article
               key={index}
               className="bg-background rounded-2xl overflow-hidden group border border-border/50"
             >
               <div className="h-56 overflow-hidden">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    width={400}
-                    height={224}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    quality={85}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  width={400}
+                  height={224}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  placeholder="blur"
+                  blurDataURL={article.placeholder}
+                  loading="lazy"
+                />
               </div>
               <div className="p-8">
                 <span className="text-secondary text-xs font-bold uppercase mb-4 block">

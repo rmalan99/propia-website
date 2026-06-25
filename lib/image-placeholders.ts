@@ -1,0 +1,30 @@
+export const imagePlaceholders: Record<string, string> = {
+  "blog-diseno":
+    "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoKAA8ABUB8JZACdADZoqjBNaAA+Q+B1fHSo53dXARhJUzhaTDUGzv327xYzFJTMOIwBrSKLQw+LOgA",
+  "blog-inversion":
+    "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoKAAcABUB8JQBOj+AC+OnyJpqwAP3jYopxFoBvP61Msc3+lZIk7+wEpkaMMnHEis8QAA==",
+  "blog-legal":
+    "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoKAAcABUB8JQBOgB+L5f+pIAAA/qK48q/LxQQGZLJ0nECGao3igbs2ZaZn4ILIwI3fuTt3TIAAAA==",
+  "hero-villa":
+    "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoKAAcABUB8JbACdADx9YKAAP0qQZPLcGl+3Q8pN8K14BNmDfpOeQ3UeVHgh86B31YkrFYSTtb0oAAA",
+  "propiedad-1-penthouse":
+    "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoKAAcABUB8JYgCdAERHjFXYAD+te74kj/KaE2Kvbv17wnh+6pDtv5wAAA=",
+  "propiedad-2-villa":
+    "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoKAAcABUB8JZACdADaP/gwAAD+0a+70bCtDayhLmtFz9QrSTzQrwBv/G445hPud9qkd1KAAAA=",
+  "propiedad-3-apartamento":
+    "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoKAAcABUB8JYwCdADcrC3dSAD80Qz4FS3VZCMrZwAybBKgFWODUHyPtY3BQZGeIAZX6xRyFoAAAA==",
+  "proyecto-legacy-tower":
+    "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoKAAcABUB8JaQAAvqouWmsoADiZafzTvfLuOTZhGCvtM/MFMMCbJAAAAA=",
+  "vender-agente":
+    "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoKAA8ABUB8JZQAAxPCOt1EbAAA/pha5EtsB3uK0vSJrs9NpJluzHIlSzd58k8iNc6s3RaBH49CfcWZ9ol/b6UFAAA=",
+  "why-trust":
+    "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoKAA0ABUB8JbACdADZHMUQAP7anTxUFzqEE6UfCFOhqrYT47DLD0xmLKipgxeRZUsWdTT38lgAAA==",
+  "zona-la-romana":
+    "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAwAgCdASoKAAcABUB8JbACdG1/tv8DEC0tAADLO2fDkyS2NLriWpICoYJ5AiPrHkJafhyC0hKUFvgpOfMER0egAAA=",
+  "zona-las-terrenas":
+    "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoKAAgABUB8JbACdAEOeWNigAD6iK26Cu1S4nvlzfMll1bC9pwG+eLVZCEXprkAAAA=",
+  "zona-punta-cana":
+    "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAQCdASoKAAcABUB8JaACdAD0SCtiHgAA8fDJgveh8Fs5CcVw1IsfsykN8WrmAAA=",
+  "zona-santo-domingo":
+    "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoKAA0ABUB8JYgCdADdoFKM0AD+xALW/i7qLvLzPm1VG+JOcmjlM+ann8ZorPNadIxbxsUqtVlKlVGr3QIEGi4AAAA=",
+};

@@ -1,10 +1,12 @@
 import { Container } from "@/components/layout/container";
 import Image from "next/image";
+import { imagePlaceholders } from "@/lib/image-placeholders";
 import { MapPin, Bed, Bath, Maximize, Heart, ArrowRight } from "lucide-react";
 
 const properties = [
   {
-    image: "/images/home/propiedad-1-penthouse.webp",
+    image: "/images/home/propiedad-1-penthouse.avif",
+    placeholder: imagePlaceholders["propiedad-1-penthouse"],
     price: "$1,250,000",
     badge: "Destacada",
     badge2: "Nueva",
@@ -16,7 +18,8 @@ const properties = [
     type: "Venta",
   },
   {
-    image: "/images/home/propiedad-2-villa.webp",
+    image: "/images/home/propiedad-2-villa.avif",
+    placeholder: imagePlaceholders["propiedad-2-villa"],
     price: "$840,000",
     badge: "Exclusiva",
     title: "Villa Serena Estates",
@@ -27,7 +30,8 @@ const properties = [
     type: "Venta",
   },
   {
-    image: "/images/home/propiedad-3-apartamento.webp",
+    image: "/images/home/propiedad-3-apartamento.avif",
+    placeholder: imagePlaceholders["propiedad-3-apartamento"],
     price: "$2,500 /mo",
     badge: "Nueva",
     title: "Luxury Sky Apartment",
@@ -71,6 +75,9 @@ export function FeaturedPropertiesSection() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   quality={85}
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  placeholder="blur"
+                  blurDataURL={property.placeholder}
+                  loading="lazy"
                 />
                 <div className="absolute top-4 left-4 flex gap-2">
                   <span className="bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded uppercase">
