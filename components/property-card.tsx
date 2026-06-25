@@ -6,13 +6,25 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Property } from "./mocks/properties";
 
+type PropertyCardAgent = {
+  name: string;
+  role?: string;
+  initials?: string;
+};
 
 type PropertyCardProps = {
   property: Property;
   priority?: boolean;
+  agent?: PropertyCardAgent;
+  showDetailLink?: boolean;
 };
 
-export function PropertyCard({ property, priority = false }: PropertyCardProps) {
+export function PropertyCard({
+  property,
+  priority = false,
+  agent,
+  showDetailLink = true,
+}: PropertyCardProps) {
   return (
     <Card className="group overflow-hidden border-border transition-shadow hover:shadow-xl">
       <div className="relative h-64 overflow-hidden">
@@ -70,10 +82,30 @@ export function PropertyCard({ property, priority = false }: PropertyCardProps) 
               <Maximize className="h-4 w-4" /> {property.sqft}
             </span>
           </div>
-          <Button asChild variant="link" className="h-auto p-0 font-bold text-primary">
-            <a href="#">Ver detalle</a>
-          </Button>
+          {showDetailLink ? (
+            <Button asChild variant="link" className="h-auto p-0 font-bold text-primary">
+              <a href="#">Ver detalle</a>
+            </Button>
+          ) : null}
         </div>
+
+        {agent ? (
+          <div className="mt-4 flex items-center gap-3 border-t border-border/70 pt-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-sm font-semibold text-secondary-foreground">
+              {agent.initials ?? agent.name.slice(0, 2).toUpperCase()}
+            </div>
+            <div className="min-w-0">
+              <p className="truncate text-sm font-semibold text-foreground">
+                {agent.name}
+              </p>
+              {agent.role ? (
+                <p className="truncate text-xs text-muted-foreground">
+                  {agent.role}
+                </p>
+              ) : null}
+            </div>
+          </div>
+        ) : null}
       </CardContent>
     </Card>
   );
