@@ -20,6 +20,7 @@ export function FeaturedAgentsSection() {
               alt="Background"
               fill
               className="object-cover"
+              sizes="100vw"
             />
           </div>
           <div className="relative z-10 p-12 md:p-20 flex flex-col lg:flex-row items-center gap-12">

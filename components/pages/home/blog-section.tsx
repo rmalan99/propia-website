@@ -37,13 +37,15 @@ export function BlogSection() {
               className="bg-background rounded-2xl overflow-hidden group border border-border/50"
             >
               <div className="h-56 overflow-hidden">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  width={400}
-                  height={224}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    width={400}
+                    height={224}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
               </div>
               <div className="p-8">
                 <span className="text-secondary text-xs font-bold uppercase mb-4 block">

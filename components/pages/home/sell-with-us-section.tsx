@@ -41,6 +41,8 @@ export function SellWithUsSection() {
                 width={400}
                 height={300}
                 className="rounded-xl"
+                quality={85}
+                sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
           </div>

@@ -34,6 +34,8 @@ export function WhyChooseUsSection() {
                 width={600}
                 height={600}
                 className="w-full h-[600px] object-cover rounded-2xl shadow-xl"
+                quality={85}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

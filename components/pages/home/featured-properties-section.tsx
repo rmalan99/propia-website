@@ -69,6 +69,8 @@ export function FeaturedPropertiesSection() {
                   alt={property.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute top-4 left-4 flex gap-2">
                   <span className="bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded uppercase">

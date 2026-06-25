@@ -35,6 +35,8 @@ export function NewProjectsSection() {
                   alt="The Legacy Tower"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <div className="flex justify-between items-center">
