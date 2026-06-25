@@ -17,13 +17,13 @@ export function QuickCategoriesSection() {
             <a
               key={category.label}
               href="#"
-              className="group p-8 bg-accent rounded-2xl hover:bg-primary transition-all duration-300"
+              className="group rounded-2xl border border-border bg-muted p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
             >
-              <category.icon className="h-10 w-10 mb-4 text-primary group-hover:text-primary-foreground" />
-              <h3 className="text-xl font-semibold group-hover:text-primary-foreground">
+              <category.icon className="mb-4 h-10 w-10 text-primary" />
+              <h3 className="text-lg font-semibold text-foreground">
                 {category.label}
               </h3>
-              <p className="text-muted-foreground group-hover:text-white/80 text-sm">
+              <p className="mt-1 text-sm text-muted-foreground">
                 {category.count}
               </p>
             </a>

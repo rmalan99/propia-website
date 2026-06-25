@@ -31,7 +31,7 @@ const locations = [
 
 export function SearchByLocationSection() {
   return (
-    <section className="py-16">
+    <section className="min-h-[90vh] flex items-center py-16">
       <Container>
         <h2 className="text-3xl font-semibold text-center mb-12">
           Explora las mejores zonas

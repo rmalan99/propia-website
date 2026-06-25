@@ -4,7 +4,7 @@ import { imagePlaceholders } from "@/lib/image-placeholders";
 
 export function NewProjectsSection() {
   return (
-    <section className="bg-primary text-primary-foreground py-12">
+    <section className="min-h-[90vh] flex items-center bg-primary py-12 text-primary-foreground">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">

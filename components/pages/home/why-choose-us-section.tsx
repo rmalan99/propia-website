@@ -23,7 +23,7 @@ const features = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-16 bg-accent">
+    <section className="min-h-[90vh] flex items-center py-16 bg-accent">
       <Container>
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
           <div className="md:w-1/2">

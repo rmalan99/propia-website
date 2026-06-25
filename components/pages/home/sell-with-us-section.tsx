@@ -11,7 +11,7 @@ const features = [
 
 export function SellWithUsSection() {
   return (
-    <section className="py-16">
+    <section className="min-h-[90vh] flex items-center py-16">
       <Container>
         <div className="bg-accent rounded-[40px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
           <div className="relative z-10 md:w-3/5">

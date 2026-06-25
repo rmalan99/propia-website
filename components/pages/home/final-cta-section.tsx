@@ -1,6 +1,6 @@
 export function FinalCtaSection() {
   return (
-    <section className="py-24 bg-accent">
+    <section className="min-h-[90vh] flex items-center py-24 bg-accent">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-8">
           ¿Listo para encontrar tu próxima propiedad?

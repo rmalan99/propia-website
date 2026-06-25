@@ -31,7 +31,7 @@ type Article = (typeof articles)[number];
 
 export function BlogSection() {
   return (
-    <section className="py-16 bg-accent">
+    <section className="min-h-[90vh] flex items-center py-16 bg-accent">
       <Container>
         <h2 className="text-3xl font-semibold text-center mb-16">
           Consejos y Tendencias del Mercado
