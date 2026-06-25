@@ -1,7 +1,6 @@
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 import { Globe, GraduationCap, Rocket, Headset } from "lucide-react";
 
 const benefits = [
