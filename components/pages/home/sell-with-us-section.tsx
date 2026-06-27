@@ -3,93 +3,133 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { imagePlaceholders } from "@/lib/image-placeholders";
-import { Search, Camera, Globe, Handshake } from "lucide-react";
 
 const steps = [
   {
-    icon: Search,
-    title: "Valuación Exacta",
-    description: "Análisis profundo del mercado local y tendencias actuales para fijar el precio óptimo.",
+    image: "propiedad-1-penthouse",
+    src: "/images/home/propiedad-1-penthouse.webp",
+    alt: "Luxury penthouse interior with modern design",
+    title: "Tasación Exacta",
+    label: "Tasación",
   },
   {
-    icon: Camera,
-    title: "Producción Profesional",
-    description: "Sesión fotográfica, video y tour virtual para destacar cada espacio.",
+    image: "proyecto-legacy-tower",
+    src: "/images/home/proyecto-legacy-tower.webp",
+    alt: "Modern real estate development under construction",
+    title: "Negociación",
+    label: "Negociación",
   },
   {
-    icon: Globe,
-    title: "Exposición Global",
-    description: "Tu propiedad en +50 portales internacionales y red de compradores calificados.",
-  },
-  {
-    icon: Handshake,
+    image: "propiedad-2-villa",
+    src: "/images/home/propiedad-2-villa.webp",
+    alt: "Beautiful villa with pool and tropical garden",
     title: "Cierre Seguro",
-    description: "Asesoría legal y negociación experta hasta que tengas las llaves en mano.",
+    label: "Venta",
   },
 ];
 
+const trustPoints = [
+  "Tasación con datos reales del mercado",
+  "Marketing profesional y compradores calificados",
+  "Negociación y cierre con respaldo legal",
+];
+
 export function SellWithUsSection() {
+  const [valuation, negotiation, closing] = steps;
+
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16">
       <Container>
-        <Card className="relative overflow-hidden rounded-[40px] border-border/60 bg-card shadow-[0_24px_80px_-48px_rgba(79,86,60,0.35)]">
-          <CardContent className="flex flex-col-reverse items-center gap-12 p-12 pt-12 md:flex-row md:p-20 md:pt-20">
-          <div className="relative z-10 w-full md:w-3/5">
-            <h2 className="text-3xl font-semibold mb-2">
-              ¿Quieres vender tu propiedad al mejor precio?
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg">
-              Te acompañamos en cada paso del proceso para que vendas tranquilo y al mejor valor de mercado.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {steps.map((step, index) => (
-                <div
-                  key={step.title}
-                  className="relative group"
-                >
-                  <div className="absolute inset-0 bg-accent/5 rounded-2xl transition-opacity group-hover:bg-accent/10" />
-                  <div className="relative flex items-start gap-3 p-4 rounded-2xl">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
-                      <step.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-accent">
-                        Paso {index + 1}
-                      </span>
-                      <h3 className="font-semibold text-foreground leading-tight">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-snug">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
+        <Card className="relative overflow-hidden rounded-[36px] border-border/60 bg-card shadow-[0_24px_80px_-48px_rgba(79,86,60,0.35)]">
+          <CardContent className="grid gap-8 p-5 sm:p-7 md:p-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch lg:p-12">
+            <div className="relative p-3 sm:p-5 lg:min-h-[520px] lg:p-8">
+              <div className="relative flex h-full flex-col justify-between gap-10">
+                <div>
+                  <span className="mb-5 inline-flex rounded-full border border-accent/20 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                    Proceso de venta
+                  </span>
+                  <h2 className="max-w-md text-4xl font-semibold leading-[0.95] tracking-tight text-foreground md:text-5xl">
+                    Vende tu propiedad con un equipo que sabe negociar.
+                  </h2>
+                  <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
+                    Convertimos tu inmueble en una oportunidad clara: tasación precisa,
+                    presentación premium, compradores calificados y cierre seguro.
+                  </p>
                 </div>
-              ))}
+
+                <div>
+                  <ul className="mb-7 space-y-3 text-sm text-muted-foreground">
+                    {trustPoints.map((point) => (
+                      <li key={point} className="flex items-start gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    type="button"
+                    size="lg"
+                    className="w-full rounded-full px-6 font-bold sm:w-auto"
+                  >
+                    Quiero vender mi propiedad
+                  </Button>
+                </div>
+              </div>
             </div>
-            <Button type="button" size="lg" className="w-full md:w-auto rounded-xl px-6 md:px-8 font-bold hover:shadow-lg">
-              Quiero vender mi propiedad
-            </Button>
-          </div>
-          <div className="md:w-2/5">
-            <div className="bg-background p-2 rounded-2xl shadow-xl rotate-3">
-              <Image
-                src="/images/home/vender-agente.avif"
-                alt="Real estate agent reviewing a property listing with a for sale sign"
-                width={400}
-                height={300}
-                className="rounded-xl"
-                quality={85}
-                sizes="(max-width: 768px) 100vw, 400px"
-                placeholder="blur"
-                blurDataURL={imagePlaceholders["vender-agente"]}
-                loading="lazy"
+
+            <div className="grid gap-4 md:grid-cols-2 md:grid-rows-[250px_250px] lg:min-h-[520px]">
+              <ProcessImageCard step={valuation} />
+              <ProcessImageCard
+                step={negotiation}
+                className="min-h-[340px] md:row-span-2 md:min-h-0"
+                titleClassName="text-2xl md:text-3xl"
+                sizes="(max-width: 768px) 100vw, 35vw"
               />
+              <ProcessImageCard step={closing} />
             </div>
-          </div>
           </CardContent>
         </Card>
       </Container>
     </section>
+  );
+}
+
+type ProcessImageCardProps = {
+  step: (typeof steps)[number];
+  className?: string;
+  compact?: boolean;
+  titleClassName?: string;
+  sizes?: string;
+};
+
+function ProcessImageCard({
+  step,
+  className,
+  compact = false,
+  titleClassName = "text-xl",
+  sizes = "(max-width: 768px) 100vw, 260px",
+}: ProcessImageCardProps) {
+  return (
+    <div
+      className={`group relative min-h-[220px] overflow-hidden rounded-[28px] bg-muted shadow-[0_18px_40px_-28px_rgba(0,0,0,0.55)] ${className ?? ""}`}
+    >
+      <Image
+        src={step.src}
+        alt={step.alt}
+        fill
+        className="object-cover transition duration-700 group-hover:scale-105"
+        quality={82}
+        sizes={sizes}
+        placeholder="blur"
+        blurDataURL={imagePlaceholders[step.image]}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/22 to-black/5" />
+      <div className={`absolute inset-x-0 bottom-0 text-white ${compact ? "p-4" : "p-5 md:p-6"}`}>
+        <span className="mb-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] backdrop-blur">
+          {step.label}
+        </span>
+        <h3 className={`${titleClassName} font-semibold leading-tight`}>{step.title}</h3>
+      </div>
+    </div>
   );
 }
