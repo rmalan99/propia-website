@@ -17,6 +17,11 @@ import {
   Copy,
   ArrowLeft,
   Square,
+  Heart,
+  Share2,
+  Printer,
+  MapPin,
+  Building2,
 } from "lucide-react";
 import { PropertyDetail } from "@/components/mocks/property-detail";
 import { Container } from "@/components/layout/container";
@@ -78,13 +83,13 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
   };
 
   return (
-    <main className="property-detail-luxe min-h-screen bg-[var(--luxe-background)] text-[var(--luxe-on-background)]">
+    <main className="min-h-screen bg-background text-foreground">
       {/* Immersive Gallery */}
       <section className="w-full mb-12">
         <Container className="py-6">
           <div className="flex flex-col md:flex-row gap-4 h-[60vh] md:h-[80vh]">
             {/* Main Hero Image */}
-            <div className="relative flex-[2.5] group overflow-hidden rounded-2xl bg-[var(--luxe-surface-container)]">
+            <div className="relative flex-[2.5] group overflow-hidden rounded-2xl bg-muted">
               <Image
                 src={allImages[currentImageIndex]}
                 alt={property.title}
@@ -121,7 +126,7 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
             {/* Vertical Thumbnails */}
             <div className="hidden md:flex flex-1 flex-col gap-4">
               {property.images.thumbnails.slice(0, 2).map((thumb, idx) => (
-                <div key={idx} className="flex-1 relative group overflow-hidden rounded-xl bg-[var(--luxe-surface-container)]">
+                <div key={idx} className="flex-1 relative group overflow-hidden rounded-xl bg-muted">
                   <Image
                     src={thumb}
                     alt={`Interior view ${idx + 1}`}
@@ -131,7 +136,7 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
                 </div>
               ))}
               <div
-                className="flex-1 relative group overflow-hidden rounded-xl cursor-pointer bg-[var(--luxe-surface-container)]"
+                className="flex-1 relative group overflow-hidden rounded-xl cursor-pointer bg-muted"
                 onClick={() => {}}
               >
                 <Image
@@ -141,7 +146,7 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
                   className="object-cover transition-transform duration-700 group-hover:scale-105 brightness-50"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white font-semibold text-lg font-[var(--luxe-font-title-lg)]" style={{ fontFamily: "var(--luxe-font-title-lg, Inter)" }}>
+                  <span className="text-white font-semibold text-lg font-heading">
                     +{allImages.length - 1} Fotos
                   </span>
                 </div>
@@ -154,40 +159,37 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
       {/* Main Content Area */}
       <div className="w-full px-4 md:px-10 py-24">
         {/* Header Section (Full Width) */}
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[var(--luxe-outline-variant)]/30">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/30">
           <div>
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-sm text-[var(--luxe-on-surface-variant)] mb-4" style={{ fontFamily: "var(--luxe-font-body, Inter)" }}>
-              <Link href="/propiedades" className="hover:text-[var(--luxe-primary)] transition-colors">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <Link href="/propiedades" className="hover:text-primary transition-colors">
                 Propiedades
               </Link>
-              <span className="text-[var(--luxe-on-surface-variant)]">›</span>
-              <Link href="/propiedades" className="hover:text-[var(--luxe-primary)] transition-colors">
+              <span className="text-muted-foreground">›</span>
+              <Link href="/propiedades" className="hover:text-primary transition-colors">
                 {property.location.split(",")[0]}
               </Link>
-              <span className="text-[var(--luxe-on-surface-variant)]">›</span>
-              <span className="text-[var(--luxe-primary)] font-medium">{property.title}</span>
+              <span className="text-muted-foreground">›</span>
+              <span className="text-primary font-medium">{property.title}</span>
             </div>
 
             {/* Badges */}
             <div className="flex items-center gap-3 mb-3">
-              <span className="bg-[var(--luxe-secondary-container)] text-[var(--luxe-on-secondary-fixed-variant)] px-2 py-1 rounded text-[10px] font-bold tracking-wider uppercase">
+              <span className="bg-secondary text-secondary-foreground px-2 py-1 rounded text-[10px] font-bold tracking-wider uppercase">
                 {property.badge}
               </span>
-              <span className="text-[var(--luxe-outline)] text-sm">MLS# {property.mlsNumber}</span>
+              <span className="text-muted-foreground text-sm">MLS# {property.mlsNumber}</span>
             </div>
 
             {/* Title */}
-            <h1 
-              className="text-4xl md:text-5xl text-[var(--luxe-primary)] mb-2 tracking-tight"
-              style={{ fontFamily: "var(--luxe-font-display-lg, Comfortaa)", fontWeight: 700 }}
-            >
+            <h1 className="text-4xl md:text-5xl text-primary mb-2 tracking-tight font-heading font-bold">
               {property.title}
             </h1>
 
             {/* Location */}
-            <div className="flex items-center text-[var(--luxe-on-surface-variant)] text-lg" style={{ fontFamily: "var(--luxe-font-body, Inter)" }}>
-              <span className="material-symbols-outlined text-xl mr-2">location_on</span>
+            <div className="flex items-center text-muted-foreground text-lg">
+              <MapPin className="h-5 w-5 mr-2 text-accent" />
               {property.address}
             </div>
           </div>
@@ -196,28 +198,26 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
           <div className="flex gap-3">
             <button
               onClick={() => setIsFavorite(!isFavorite)}
-              className="w-12 h-12 rounded-full border border-[var(--luxe-outline-variant)] flex items-center justify-center text-[var(--luxe-on-surface)] hover:bg-[var(--luxe-surface-container-high)] transition-colors"
+              className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-accent/10 transition-colors"
               title="Guardar"
               aria-label={isFavorite ? "Quitar de favoritos" : "Guardar en favoritos"}
             >
-              <span className="material-symbols-outlined">
-                {isFavorite ? "favorite" : "favorite_border"}
-              </span>
+              <Heart className="h-5 w-5" fill={isFavorite ? "currentColor" : "none"} />
             </button>
             <button
               onClick={() => setIsShareSheetOpen(true)}
-              className="w-12 h-12 rounded-full border border-[var(--luxe-outline-variant)] flex items-center justify-center text-[var(--luxe-on-surface)] hover:bg-[var(--luxe-surface-container-high)] transition-colors"
+              className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-accent/10 transition-colors"
               title="Compartir"
               aria-label="Compartir"
             >
-              <span className="material-symbols-outlined">share</span>
+              <Share2 className="h-5 w-5" />
             </button>
             <button
-              className="w-12 h-12 rounded-full border border-[var(--luxe-outline-variant)] flex items-center justify-center text-[var(--luxe-on-surface)] hover:bg-[var(--luxe-surface-container-high)] transition-colors"
+              className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-accent/10 transition-colors"
               title="Imprimir"
               aria-label="Imprimir"
             >
-              <span className="material-symbols-outlined">print</span>
+              <Printer className="h-5 w-5" />
             </button>
           </div>
         </div>
@@ -227,39 +227,39 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
           {/* Key Info Column */}
           <div className="md:col-span-12 lg:col-span-4 grid grid-cols-2 gap-4">
             {/* Price Tile (Prominent) */}
-            <div className="col-span-2 bg-[var(--luxe-primary)] text-[var(--luxe-on-primary)] rounded-2xl p-6 flex flex-col justify-center shadow-sm">
-              <p className="text-[10px] uppercase tracking-wider font-semibold mb-1 text-[var(--luxe-on-primary)] opacity-80">
+            <div className="col-span-2 bg-primary text-primary-foreground rounded-2xl p-6 flex flex-col justify-center shadow-sm">
+              <p className="text-[10px] uppercase tracking-wider font-semibold mb-1 text-primary-foreground opacity-80">
                 Rango de Precio
               </p>
-              <p className="text-2xl font-bold text-[var(--luxe-on-primary)]" style={{ fontFamily: "var(--luxe-font-headline-sm, Comfortaa)" }}>
+              <p className="text-2xl font-bold font-heading text-primary-foreground">
                 Desde {property.priceRange.min}
               </p>
-              <p className="text-[var(--luxe-on-primary)] opacity-90">Hasta {property.priceRange.max}</p>
+              <p className="text-primary-foreground opacity-90">Hasta {property.priceRange.max}</p>
             </div>
 
             {/* Delivery Date Tile */}
-            <div className="col-span-2 bg-[var(--luxe-surface-container-high)] rounded-2xl p-6 flex flex-col items-center justify-center text-center">
-              <p className="text-[var(--luxe-outline)] text-[10px] uppercase tracking-wider font-semibold mb-1">
+            <div className="col-span-2 bg-card rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+              <p className="text-muted-foreground text-[10px] uppercase tracking-wider font-semibold mb-1">
                 Fecha de Entrega
               </p>
-              <p className="text-2xl font-bold text-[var(--luxe-primary)]" style={{ fontFamily: "var(--luxe-font-headline-sm, Comfortaa)" }}>
+              <p className="text-2xl font-bold font-heading text-primary">
                 {property.deliveryDate}
               </p>
             </div>
 
             {/* Trust Tile */}
-            <div className="col-span-2 bg-[var(--luxe-surface-container-low)] border border-[var(--luxe-outline-variant)]/30 rounded-2xl p-6 flex justify-between items-center">
+            <div className="col-span-2 bg-muted border border-border/30 rounded-2xl p-6 flex justify-between items-center">
               <div className="flex flex-col gap-3 w-full">
-                <p className="text-[var(--luxe-outline)] text-[10px] uppercase tracking-wider font-semibold">Fideicomiso</p>
+                <p className="text-muted-foreground text-[10px] uppercase tracking-wider font-semibold">Fideicomiso</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[var(--luxe-primary)]/10 flex items-center justify-center text-[var(--luxe-primary)] flex-shrink-0">
-                    <span className="material-symbols-outlined">account_balance</span>
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                    <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xl font-bold text-[var(--luxe-primary)]" style={{ fontFamily: "var(--luxe-font-headline-sm, Comfortaa)" }}>
+                    <p className="text-xl font-bold font-heading text-primary">
                       {property.trust.name}
                     </p>
-                    <p className="text-sm text-[var(--luxe-on-surface-variant)]" style={{ fontFamily: "var(--luxe-font-body-md, Inter)" }}>
+                    <p className="text-sm text-muted-foreground">
                       {property.trust.fiduciary}
                     </p>
                   </div>
@@ -269,32 +269,26 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
           </div>
 
           {/* Description */}
-          <div className="md:col-span-12 lg:col-span-8 bg-[var(--luxe-surface)] border border-[var(--luxe-outline-variant)]/30 rounded-2xl p-8">
-            <h2 
-              className="text-2xl text-[var(--luxe-primary)] mb-4"
-              style={{ fontFamily: "var(--luxe-font-headline-sm, Comfortaa)", fontWeight: 600 }}
-            >
+          <div className="md:col-span-12 lg:col-span-8 bg-card border border-border/30 rounded-2xl p-8">
+            <h2 className="text-2xl text-primary mb-4 font-heading font-semibold">
               Acerca de la Propiedad
             </h2>
-            <div className="prose prose-lg text-[var(--luxe-on-surface-variant)] leading-relaxed max-w-none" style={{ fontFamily: "var(--luxe-font-body-lg, Inter)" }}>
+            <div className="prose prose-lg text-muted-foreground leading-relaxed max-w-none">
               {property.description.split("\n\n").map((paragraph, idx) => (
                 <p key={idx} className="mb-4 last:mb-0">
                   {paragraph}
                 </p>
               ))}
             </div>
-            <button className="mt-6 text-[var(--luxe-primary)] font-bold hover:underline flex items-center gap-1 group">
+            <button className="mt-6 text-primary font-bold hover:underline flex items-center gap-1 group">
               Leer Descripción Completa
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
 
           {/* Features & Amenities */}
-          <div className="md:col-span-12 bg-[var(--luxe-surface-container-low)] rounded-2xl p-8">
-            <h2 
-              className="text-2xl text-[var(--luxe-primary)] mb-6"
-              style={{ fontFamily: "var(--luxe-font-headline-sm, Comfortaa)", fontWeight: 600 }}
-            >
+          <div className="md:col-span-12 bg-muted rounded-2xl p-8">
+            <h2 className="text-2xl text-primary mb-6 font-heading font-semibold">
               Características y Amenidades
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -303,12 +297,12 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
                 return (
                   <div
                     key={idx}
-                    className="flex flex-col items-center text-center gap-3 p-4 rounded-xl bg-[var(--luxe-surface)] hover:shadow-md transition-shadow"
+                    className="flex flex-col items-center text-center gap-3 p-4 rounded-xl bg-card hover:shadow-md transition-shadow"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[var(--luxe-primary-fixed)]/20 flex items-center justify-center text-[var(--luxe-primary)]">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                       <IconComponent className="h-6 w-6" />
                     </div>
-                    <span className="font-medium text-sm text-[var(--luxe-on-surface)] text-center">
+                    <span className="font-medium text-sm text-foreground text-center">
                       {feature.label}
                     </span>
                   </div>
@@ -326,41 +320,38 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
               className="object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-8">
-              <div className="bg-[var(--luxe-surface)] p-4 rounded-xl shadow-lg flex items-center gap-4 max-w-sm">
-                <div className="bg-[var(--luxe-primary)]/10 p-3 rounded-full">
-                  <Compass className="h-5 w-5 text-[var(--luxe-primary)]" />
+              <div className="bg-card p-4 rounded-xl shadow-lg flex items-center gap-4 max-w-sm">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <Compass className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="font-bold text-[var(--luxe-on-surface)]">{property.location}</p>
-                  <p className="text-sm text-[var(--luxe-on-surface-variant)]">5 mins to downtown</p>
+                  <p className="font-bold text-foreground">{property.location}</p>
+                  <p className="text-sm text-muted-foreground">5 mins to downtown</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Mortgage Calculator */}
-          <div className="md:col-span-12 bg-[var(--luxe-surface-container-low)] rounded-2xl p-8">
-            <h2 
-              className="text-2xl text-[var(--luxe-primary)] mb-6"
-              style={{ fontFamily: "var(--luxe-font-headline-sm, Comfortaa)", fontWeight: 600 }}
-            >
+          <div className="md:col-span-12 bg-muted rounded-2xl p-8">
+            <h2 className="text-2xl text-primary mb-6 font-heading font-semibold">
               Calculadora Hipotecaria
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div>
-                  <label className="block text-[10px] mb-2 text-[var(--luxe-on-surface-variant)] uppercase tracking-wider font-semibold">
+                  <label className="block text-[10px] mb-2 text-muted-foreground uppercase tracking-wider font-semibold">
                     Precio de Propiedad (US$)
                   </label>
                   <input
                     type="text"
                     defaultValue={property.priceRange.min.replace("$", "").replace(",", "")}
-                    className="w-full border border-[var(--luxe-outline-variant)] p-3 bg-[var(--luxe-surface)] rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--luxe-primary)]"
+                    className="w-full border border-border p-3 bg-card rounded-xl focus:outline-none focus:ring-2 focus:ring-ring"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] mb-2 text-[var(--luxe-on-surface-variant)] uppercase tracking-wider font-semibold">
+                  <label className="block text-[10px] mb-2 text-muted-foreground uppercase tracking-wider font-semibold">
                     Pago Inicial (%)
                   </label>
                   <input
@@ -369,46 +360,43 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
                     max="50"
                     value={downPaymentPercent}
                     onChange={(e) => setDownPaymentPercent(Number(e.target.value))}
-                    className="w-full accent-[var(--luxe-primary)]"
+                    className="w-full accent-primary"
                   />
-                  <span className="text-sm font-bold text-[var(--luxe-primary)]">{downPaymentPercent}%</span>
+                  <span className="text-sm font-bold text-primary">{downPaymentPercent}%</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[10px] mb-2 text-[var(--luxe-on-surface-variant)] uppercase tracking-wider font-semibold">
+                    <label className="block text-[10px] mb-2 text-muted-foreground uppercase tracking-wider font-semibold">
                       Interés (%)
                     </label>
                     <input
                       type="text"
                       defaultValue="6.5"
-                      className="w-full border border-[var(--luxe-outline-variant)] p-3 bg-[var(--luxe-surface)] rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--luxe-primary)]"
+                      className="w-full border border-border p-3 bg-card rounded-xl focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] mb-2 text-[var(--luxe-on-surface-variant)] uppercase tracking-wider font-semibold">
+                    <label className="block text-[10px] mb-2 text-muted-foreground uppercase tracking-wider font-semibold">
                       Plazo (Años)
                     </label>
                     <input
                       type="text"
                       defaultValue="30"
-                      className="w-full border border-[var(--luxe-outline-variant)] p-3 bg-[var(--luxe-surface)] rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--luxe-primary)]"
+                      className="w-full border border-border p-3 bg-card rounded-xl focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col items-center justify-center border-l border-[var(--luxe-outline-variant)]/30 md:pl-8">
-                <p className="text-[var(--luxe-on-surface-variant)] text-sm mb-2 uppercase tracking-wider font-semibold">
+              <div className="flex flex-col items-center justify-center border-l border-border/30 md:pl-8">
+                <p className="text-muted-foreground text-sm mb-2 uppercase tracking-wider font-semibold">
                   Cuota Mensual Estimada
                 </p>
-                <p 
-                  className="text-4xl text-[var(--luxe-primary)] font-bold"
-                  style={{ fontFamily: "var(--luxe-font-headline-md, Comfortaa)" }}
-                >
+                <p className="text-4xl text-primary font-bold font-heading">
                   US$ 42,980
                 </p>
-                <p className="text-[10px] text-[var(--luxe-on-surface-variant)] mt-4 text-center max-w-xs">
+                <p className="text-[10px] text-muted-foreground mt-4 text-center max-w-xs">
                   Este cálculo es informativo y no constituye una oferta formal de financiamiento.
                 </p>
               </div>
@@ -418,25 +406,22 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
       </div>
 
       {/* Similar Properties Section */}
-      <section className="w-full bg-[var(--luxe-surface-container-lowest)] py-24">
+      <section className="w-full bg-muted/50 py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-10">
           <div className="flex justify-between items-end mb-16">
             <div>
-              <h2 
-                className="text-3xl text-[var(--luxe-primary)]"
-                style={{ fontFamily: "var(--luxe-font-headline-md, Comfortaa)" }}
-              >
+              <h2 className="text-3xl text-primary font-heading">
                 Propiedades Similares
               </h2>
-              <p className="text-[var(--luxe-on-surface-variant)] mt-2">
+              <p className="text-muted-foreground mt-2">
                 Inmuebles exclusivos que coinciden con tu gusto refinado.
               </p>
             </div>
             <div className="hidden md:flex gap-2">
-              <Button variant="outline" size="icon" className="rounded-full border-[var(--luxe-outline-variant)] hover:bg-[var(--luxe-surface-container-high)]" aria-label="Anterior">
+              <Button variant="outline" size="icon" className="rounded-full border-border hover:bg-accent/10" aria-label="Anterior">
                 <ArrowLeft className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full border-[var(--luxe-outline-variant)] hover:bg-[var(--luxe-surface-container-high)]" aria-label="Siguiente">
+              <Button variant="outline" size="icon" className="rounded-full border-border hover:bg-accent/10" aria-label="Siguiente">
                 <ChevronRight className="h-5 w-5" />
               </Button>
             </div>
@@ -445,7 +430,7 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {property.similarProperties.map((similar) => (
               <Link href={`/propiedades/${similar.id}`} key={similar.id}>
-                <Card className="group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 bg-[var(--luxe-surface)] border border-[var(--luxe-outline-variant)]/20 shadow-sm">
+                <Card className="group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 bg-card border border-border/20 shadow-sm">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={similar.image}
@@ -454,25 +439,22 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
-                      <Badge className="rounded px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-[var(--luxe-surface)]/90 backdrop-blur-sm text-[var(--luxe-primary)] shadow-sm">
+                      <Badge className="rounded px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-card/90 backdrop-blur-sm text-primary shadow-sm">
                         {similar.badge}
                       </Badge>
                     </div>
                   </div>
                   <CardContent className="p-6">
-                    <p className="text-[10px] uppercase tracking-wider text-[var(--luxe-outline)] mb-2 font-semibold">
+                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2 font-semibold">
                       {similar.location}
                     </p>
-                    <h3 
-                      className="text-lg text-[var(--luxe-on-surface)] mb-2 truncate group-hover:text-[var(--luxe-primary)] transition-colors"
-                      style={{ fontFamily: "var(--luxe-font-title-lg, Inter)", fontWeight: 600 }}
-                    >
+                    <h3 className="text-lg text-foreground mb-2 truncate group-hover:text-primary transition-colors font-semibold">
                       {similar.title}
                     </h3>
-                    <p className="text-xl font-bold text-[var(--luxe-primary)] mb-6" style={{ fontFamily: "var(--luxe-font-headline-sm, Comfortaa)" }}>
+                    <p className="text-xl font-bold text-primary font-heading mb-6">
                       {similar.price}
                     </p>
-                    <div className="flex items-center justify-between text-sm text-[var(--luxe-on-surface-variant)] border-t border-[var(--luxe-outline-variant)]/20 pt-4">
+                    <div className="flex items-center justify-between text-sm text-muted-foreground border-t border-border/20 pt-4">
                       <span className="flex items-center gap-1 font-medium">
                         <Bed className="h-4 w-4" /> {similar.beds} Beds
                       </span>
@@ -493,66 +475,62 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
 
       {/* Final CTA */}
       <section className="w-full">
-        <div className="bg-[var(--luxe-primary)] text-[var(--luxe-on-primary)] py-24 text-center relative overflow-hidden">
+        <div className="bg-primary text-primary-foreground py-24 text-center relative overflow-hidden">
           <div className="relative z-10 max-w-3xl mx-auto px-6">
-            <h2 
-              className="text-4xl md:text-5xl mb-6"
-              style={{ fontFamily: "var(--luxe-font-display-lg, Comfortaa)", fontWeight: 700 }}
-            >
+            <h2 className="text-4xl md:text-5xl mb-6 font-heading font-bold">
               Asegura tu legado hoy.
             </h2>
-            <p className="text-lg mb-10 opacity-90" style={{ fontFamily: "var(--luxe-font-body-lg, Inter)" }}>
+            <p className="text-lg mb-10 opacity-90">
               Las oportunidades de poseer Obras Maestras arquitectónicas de esta categoría son extremadamente raras. Contáctanos para coordinar una visita privada.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-[var(--luxe-surface)] text-[var(--luxe-primary)] hover:bg-[var(--luxe-surface-container-high)] font-bold px-10 py-4 rounded-md shadow-lg text-lg"
+            <Button
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold px-10 py-4 rounded-md shadow-lg text-lg"
             >
               Solicitar Información
             </Button>
           </div>
-          {/* Abstract background pattern */}
-          <div 
-            className="absolute inset-0 opacity-10 pointer-events-none" 
+          <div
+            className="absolute inset-0 opacity-10 pointer-events-none"
             style={{ backgroundImage: "radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)", backgroundSize: "32px 32px" }}
           />
         </div>
       </section>
 
       {/* Sticky Action Bar */}
-      <div className="fixed bottom-0 left-0 w-full bg-[var(--luxe-surface)] border-t border-[var(--luxe-outline-variant)]/30 shadow-[-8px_-8px_30px_rgba(0,0,0,0.08)] z-50 transform transition-transform duration-300 p-4 md:p-6">
+      <div className="fixed bottom-0 left-0 w-full bg-card border-t border-border/30 shadow-[-8px_-8px_30px_rgba(0,0,0,0.08)] z-50 transform transition-transform duration-300 p-4 md:p-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Agent Info */}
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full bg-[var(--luxe-primary)] text-[var(--luxe-on-primary)] flex items-center justify-center font-bold text-lg">
+            <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
               {property.agent.initials}
             </div>
             <div>
               <div className="flex items-center gap-1">
-                <h4 className="font-bold text-[var(--luxe-on-surface)] text-lg">{property.agent.name}</h4>
-                <Check className="h-4 w-4 text-[var(--luxe-secondary)]" />
+                <h4 className="font-bold text-foreground text-lg">{property.agent.name}</h4>
+                <Check className="h-4 w-4 text-accent" />
               </div>
-              <p className="text-sm text-[var(--luxe-on-surface-variant)]">{property.agent.role}</p>
+              <p className="text-sm text-muted-foreground">{property.agent.role}</p>
             </div>
           </div>
 
           {/* Actions */}
           <div className="flex w-full md:w-auto gap-3">
-            <Button 
-              variant="outline" 
-              className="flex-1 md:flex-none gap-2 bg-[var(--luxe-surface)] border-[var(--luxe-outline-variant)] text-[var(--luxe-on-surface)] hover:bg-[var(--luxe-surface-container-high)]"
+            <Button
+              variant="outline"
+              className="flex-1 md:flex-none gap-2 bg-card border-border text-foreground hover:bg-accent/10"
             >
               <Phone className="h-5 w-5" />
               <span className="hidden sm:inline">Llamar</span>
             </Button>
-            <Button 
-              variant="outline" 
-              className="flex-1 md:flex-none gap-2 bg-[var(--luxe-surface)] border-[var(--luxe-outline-variant)] text-[var(--luxe-on-surface)] hover:bg-[var(--luxe-surface-container-high)]"
+            <Button
+              variant="outline"
+              className="flex-1 md:flex-none gap-2 bg-card border-border text-foreground hover:bg-accent/10"
             >
               <Mail className="h-5 w-5" />
               <span className="hidden sm:inline">Mensaje</span>
             </Button>
-            <Button className="flex-[2] md:flex-none gap-2 bg-[var(--luxe-primary)] text-[var(--luxe-on-primary)] hover:bg-[var(--luxe-primary)]/90">
+            <Button className="flex-[2] md:flex-none gap-2 bg-primary text-primary-foreground hover:bg-primary/90">
               <Calendar className="h-5 w-5" />
               Agendar Visita
             </Button>
@@ -562,20 +540,17 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
 
       {/* Share Sheet with QR Code */}
       <Sheet open={isShareSheetOpen} onOpenChange={setIsShareSheetOpen}>
-        <SheetContent side="bottom" className="sm:max-w-md mx-auto rounded-t-2xl bg-[var(--luxe-surface)]">
+        <SheetContent side="bottom" className="sm:max-w-md mx-auto rounded-t-2xl bg-card">
           <SheetHeader className="text-center pb-6">
-            <SheetTitle 
-              className="text-xl text-[var(--luxe-on-surface)]"
-              style={{ fontFamily: "var(--luxe-font-headline-sm, Comfortaa)" }}
-            >
+            <SheetTitle className="text-xl text-foreground font-heading">
               Compartir Propiedad
             </SheetTitle>
-            <SheetDescription className="text-[var(--luxe-on-surface-variant)]">
+            <SheetDescription className="text-muted-foreground">
               Escanea el código QR o copia el enlace para compartir
             </SheetDescription>
           </SheetHeader>
           <div className="flex flex-col items-center gap-6 py-4">
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-[var(--luxe-outline-variant)]">
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-border">
               <QRCodeSVG
                 value={`https://propia.com/propiedades/${property.id}`}
                 size={180}
@@ -583,12 +558,12 @@ export function PropertyDetailClient({ property }: PropertyDetailClientProps) {
                 includeMargin
               />
             </div>
-            <p className="text-sm text-[var(--luxe-on-surface-variant)] text-center">
+            <p className="text-sm text-muted-foreground text-center">
               Escanea para ver en tu teléfono
             </p>
             <Button
               variant="outline"
-              className="w-full gap-2 bg-[var(--luxe-surface)] border-[var(--luxe-outline-variant)] text-[var(--luxe-on-surface)]"
+              className="w-full gap-2 bg-card border-border text-foreground"
               onClick={() => {
                 navigator.clipboard.writeText(`https://propia.com/propiedades/${property.id}`);
                 setIsLinkCopied(true);
