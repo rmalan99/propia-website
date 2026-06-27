@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
@@ -11,23 +11,9 @@ import { PropertyCard } from "@/components/property-card";
 
 export function FeaturedPropertiesSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(true);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevBtnEnabled(emblaApi.canScrollPrev());
-    setNextBtnEnabled(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    emblaApi.on("select", onSelect);
-    onSelect();
-  }, [emblaApi, onSelect]);
 
   return (
     <section className="py-8 md:py-12 bg-background overflow-hidden">
@@ -45,7 +31,6 @@ export function FeaturedPropertiesSection() {
               size="icon"
               className="rounded-full border-border"
               onClick={scrollPrev}
-              disabled={!prevBtnEnabled}
               aria-label="Anterior"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -55,7 +40,6 @@ export function FeaturedPropertiesSection() {
               size="icon"
               className="rounded-full border-border"
               onClick={scrollNext}
-              disabled={!nextBtnEnabled}
               aria-label="Siguiente"
             >
               <ChevronRight className="h-5 w-5" />
@@ -88,7 +72,6 @@ export function FeaturedPropertiesSection() {
             size="icon"
             className="rounded-full border-border"
             onClick={scrollPrev}
-            disabled={!prevBtnEnabled}
             aria-label="Anterior"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -98,7 +81,6 @@ export function FeaturedPropertiesSection() {
             size="icon"
             className="rounded-full border-border"
             onClick={scrollNext}
-            disabled={!nextBtnEnabled}
             aria-label="Siguiente"
           >
             <ChevronRight className="h-5 w-5" />
