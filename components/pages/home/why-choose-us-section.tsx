@@ -24,7 +24,7 @@ const features = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="min-h-[90vh] flex items-center py-16 bg-muted/35">
+    <section className="py-16 md:py-24 bg-muted/35">
       <Container>
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
           <div className="md:w-1/2">

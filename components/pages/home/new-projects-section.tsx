@@ -6,7 +6,7 @@ import { imagePlaceholders } from "@/lib/image-placeholders";
 
 export function NewProjectsSection() {
   return (
-    <section className="min-h-[90vh] flex items-center bg-primary py-12 text-primary-foreground">
+    <section className="py-16 md:py-24 bg-primary text-primary-foreground">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
@@ -33,7 +33,7 @@ export function NewProjectsSection() {
           <div className="md:col-span-7">
             <Card className="group relative rounded-3xl border-white/10 bg-white/5 p-4 text-primary-foreground backdrop-blur-sm">
               <CardContent className="p-0">
-              <div className="relative h-[400px] overflow-hidden rounded-2xl mb-6">
+              <div className="relative h-[250px] md:h-[400px] overflow-hidden rounded-2xl mb-6">
                 <Image
                   src="/images/home/proyecto-legacy-tower.avif"
                   alt="The Legacy Tower"

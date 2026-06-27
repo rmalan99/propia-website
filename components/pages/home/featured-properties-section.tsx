@@ -7,9 +7,9 @@ import { PropertyCard } from "@/components/property-card";
 
 export function FeaturedPropertiesSection() {
   return (
-    <section className="min-h-[90vh] flex items-center  bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <Container>
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-12">
           <div>
             <span className="text-secondary font-semibold tracking-wider text-xs uppercase">
               Selección Exclusiva

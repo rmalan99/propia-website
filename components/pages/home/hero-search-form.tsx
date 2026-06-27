@@ -61,26 +61,27 @@ export function HeroSearchForm() {
                 type="button"
                 size="sm"
                 variant={searchMode === "ai" ? "default" : "ghost"}
-                className="flex-1 rounded-full px-4 md:flex-none"
+                className="flex-1 rounded-full px-3 md:px-4 md:flex-none"
                 onClick={() => setSearchMode("ai")}
               >
                 <Sparkles className="h-4 w-4" />
-                Modo IA
+                <span className="hidden sm:inline">Modo IA</span>
               </Button>
               <Button
                 type="button"
                 size="sm"
                 variant={searchMode === "classic" ? "default" : "ghost"}
-                className="flex-1 rounded-full px-4 md:flex-none"
+                className="flex-1 rounded-full px-3 md:px-4 md:flex-none"
                 onClick={() => setSearchMode("classic")}
               >
-                Clásico
+                <span className="hidden sm:inline">Clásico</span>
+                <span className="sm:hidden">IA</span>
               </Button>
             </div>
           </div>
           {searchMode === "ai" ? (
-            <div className="animate-in fade-in-0 zoom-in-95 slide-in-from-bottom-2 space-y-4 rounded-3xl border border-primary/10 bg-gradient-to-br from-primary/5 via-background to-background p-4 duration-300 md:p-5">
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+            <div className="animate-in fade-in-0 zoom-in-95 slide-in-from-bottom-2 space-y-4 rounded-3xl border border-primary/10 bg-gradient-to-br from-primary/5 via-background to-background p-4 md:p-5">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-[minmax(0,1fr)_auto] md:items-center">
                 <div className="relative">
                   <Sparkles className="absolute left-3 top-1/2 z-10 h-5 w-5 -translate-y-1/2 text-primary" />
                   <Input
@@ -104,7 +105,7 @@ export function HeroSearchForm() {
                 <p className="text-left text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
                   Sugerencias
                 </p>
-                <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
                   {AI_SUGGESTIONS.map((suggestion) => (
                     <button
                       key={suggestion}
@@ -129,7 +130,7 @@ export function HeroSearchForm() {
                     className="h-12 rounded-xl border-border/70 bg-background pl-10 pr-4 transition-all duration-300 focus-visible:border-primary/30"
                   />
                 </div>
-                <div className="grid grid-cols-1 gap-3 md:col-span-4 md:grid-cols-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:col-span-4">
                   <Select defaultValue="all-types">
                     <SelectTrigger className="h-12 rounded-xl border-border/70 bg-background">
                       <SelectValue placeholder="Tipo Propiedad" />
@@ -159,18 +160,20 @@ export function HeroSearchForm() {
                   type="button"
                 >
                   <Search className="h-5 w-5" />
-                  Buscar propiedades
+                  <span className="hidden sm:inline">Buscar propiedades</span>
+                  <span className="sm:hidden">Buscar</span>
                 </Button>
               </div>
               <div className="flex justify-start">
                 <Button
                   type="button"
                   variant="outline"
+                  size="sm"
                   className="rounded-full border-border/70 bg-background/80 transition-all duration-300 hover:border-primary/30 hover:bg-primary/5"
                   onClick={() => setShowMoreFilters((current) => !current)}
                 >
                   <SlidersHorizontal className="h-4 w-4" />
-                  Filtros
+                  <span className="hidden sm:inline">Filtros</span>
                   <ChevronDown
                     className={cn(
                       "h-4 w-4 transition-transform",

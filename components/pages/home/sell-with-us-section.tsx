@@ -13,11 +13,11 @@ const features = [
 
 export function SellWithUsSection() {
   return (
-    <section className="min-h-[90vh] flex items-center py-16">
+    <section className="py-16 md:py-24">
       <Container>
         <Card className="relative overflow-hidden rounded-[40px] border-border/60 bg-card shadow-[0_24px_80px_-48px_rgba(79,86,60,0.35)]">
-          <CardContent className="flex flex-col items-center gap-12 p-12 pt-12 md:flex-row md:p-20 md:pt-20">
-          <div className="relative z-10 md:w-3/5">
+          <CardContent className="flex flex-col-reverse items-center gap-12 p-12 pt-12 md:flex-row md:p-20 md:pt-20">
+          <div className="relative z-10 w-full md:w-3/5">
             <h2 className="text-3xl font-semibold mb-6">
               ¿Quieres vender tu propiedad al mejor precio?
             </h2>
@@ -33,7 +33,7 @@ export function SellWithUsSection() {
                 </li>
                 ))}
               </ul>
-            <Button type="button" size="lg" className="rounded-xl px-8 font-bold hover:shadow-lg">
+            <Button type="button" size="lg" className="w-full md:w-auto rounded-xl px-6 md:px-8 font-bold hover:shadow-lg">
               Quiero vender mi propiedad
             </Button>
           </div>

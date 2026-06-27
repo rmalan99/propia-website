@@ -12,7 +12,7 @@ const benefits = [
 
 export function FeaturedAgentsSection() {
   return (
-    <section className="min-h-[90vh] flex items-center py-16">
+    <section className="py-16 md:py-24">
       <Container>
         <div className="relative rounded-[40px] overflow-hidden bg-primary text-primary-foreground">
           <div className="relative z-10 p-12 md:p-20 flex flex-col lg:flex-row items-center gap-12">

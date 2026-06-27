@@ -4,7 +4,7 @@ import { imagePlaceholders } from "@/lib/image-placeholders";
 
 export function HeroSection() {
   return (
-    <section className="relative h-[700px] w-full overflow-hidden">
+    <section className="relative h-[500px] md:h-[600px] lg:h-[700px] w-full overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/home/hero-villa.avif"

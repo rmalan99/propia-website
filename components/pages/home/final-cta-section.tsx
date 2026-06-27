@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export function FinalCtaSection() {
   return (
-    <section className="min-h-[90vh] flex items-center py-24 bg-primary text-primary-foreground">
+    <section className="py-16 md:py-24 bg-primary text-primary-foreground">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-8">
           ¿Listo para encontrar tu próxima propiedad?
