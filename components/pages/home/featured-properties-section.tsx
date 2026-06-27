@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
@@ -23,15 +23,21 @@ export function FeaturedPropertiesSection() {
     setNextBtnEnabled(emblaApi.canScrollNext());
   }, [emblaApi]);
 
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
+
   return (
-    <section className="py-16 md:py-24 bg-background overflow-hidden">
+    <section className="py-8 md:py-12 bg-background overflow-hidden">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-8">
           <div>
             <span className="text-secondary font-semibold tracking-wider text-xs uppercase">
               Selección Exclusiva
             </span>
-            <h2 className="text-3xl font-semibold mt-2">Propiedades Destacadas</h2>
+            <h2 className="text-3xl font-semibold mt-1">Propiedades Destacadas</h2>
           </div>
           <div className="hidden md:flex gap-2">
             <Button
@@ -57,12 +63,12 @@ export function FeaturedPropertiesSection() {
           </div>
         </div>
 
-        <div className="overflow-hidden -mx-4 px-4" ref={emblaRef}>
-          <div className="flex gap-6">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-4 md:gap-6">
             {mockProperties.map((property, index) => (
               <div
                 key={property.title}
-                className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_25%] min-w-0"
+                className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_30%] lg:flex-[0_0_22%] min-w-0 pl-4 first:pl-0"
               >
                 <PropertyCard
                   property={property}
@@ -74,7 +80,7 @@ export function FeaturedPropertiesSection() {
           </div>
         </div>
 
-        <div className="flex md:hidden justify-center gap-2 mt-6">
+        <div className="flex md:hidden justify-center gap-2 mt-4">
           <Button
             variant="outline"
             size="icon"
