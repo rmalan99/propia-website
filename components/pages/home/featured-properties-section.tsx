@@ -64,17 +64,19 @@ export function FeaturedPropertiesSection() {
         </div>
 
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-4 md:gap-6">
+          <div className="flex">
             {mockProperties.map((property, index) => (
               <div
                 key={property.title}
-                className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_30%] lg:flex-[0_0_22%] min-w-0 pl-4 first:pl-0"
+                className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_33%] lg:flex-[0_0_25%] min-w-0"
               >
-                <PropertyCard
-                  property={property}
-                  priority={index === 0}
-                  showDetailLink={false}
-                />
+                <div className="px-2">
+                  <PropertyCard
+                    property={property}
+                    priority={index === 0}
+                    showDetailLink={false}
+                  />
+                </div>
               </div>
             ))}
           </div>
