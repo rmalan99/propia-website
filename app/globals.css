@@ -190,6 +190,58 @@
   max-width: 1440px; 
 }
 
+/* Property Detail LuxeRealEstate Theme */
+:root {
+  /* LuxeRealEstate color palette */
+  --luxe-surface-container: #f0edec;
+  --luxe-surface-container-low: #f6f3f2;
+  --luxe-surface: #fcf9f8;
+  --luxe-on-primary-fixed: #001b3c;
+  --luxe-tertiary-fixed: #ffddba;
+  --luxe-on-secondary-container: #306d58;
+  --luxe-on-primary-container: #86a0cd;
+  --luxe-inverse-primary: #adc7f7;
+  --luxe-on-error-container: #93000a;
+  --luxe-secondary: #2b6954;
+  --luxe-outline-variant: #c4c6cf;
+  --luxe-error: #ba1a1a;
+  --luxe-error-container: #ffdad6;
+  --luxe-surface-container-lowest: #ffffff;
+  --luxe-on-tertiary: #ffffff;
+  --luxe-primary: #002045;
+  --luxe-surface-container-highest: #e5e2e1;
+  --luxe-surface-tint: #455f88;
+  --luxe-background: #fcf9f8;
+  --luxe-surface-container-high: #ebe7e7;
+  --luxe-secondary-fixed-dim: #95d3ba;
+  --luxe-on-tertiary-fixed: #2b1700;
+  --luxe-outline: #74777f;
+  --luxe-surface-dim: #dcd9d9;
+  --luxe-inverse-on-surface: #f3f0ef;
+  --luxe-tertiary: #321b00;
+  --luxe-surface-variant: #e5e2e1;
+  --luxe-primary-fixed-dim: #adc7f7;
+  --luxe-on-primary-fixed-variant: #2d476f;
+  --luxe-on-tertiary-container: #c6955e;
+  --luxe-on-surface: #1c1b1b;
+  --luxe-tertiary-fixed-dim: #f2bc82;
+  --luxe-primary-fixed: #d6e3ff;
+  --luxe-on-primary: #ffffff;
+  --luxe-on-background: #1c1b1b;
+  --luxe-primary-container: #1a365d;
+  --luxe-on-secondary-fixed: #002117;
+  --luxe-tertiary-container: #4f2e00;
+  --luxe-on-tertiary-fixed-variant: #633f0f;
+  --luxe-on-surface-variant: #43474e;
+  --luxe-surface-bright: #fcf9f8;
+  --luxe-on-secondary-fixed-variant: #0b513d;
+  --luxe-on-error: #ffffff;
+  --luxe-secondary-fixed: #b0f0d6;
+  --luxe-secondary-container: #adedd3;
+  --luxe-on-secondary: #ffffff;
+  --luxe-inverse-surface: #313030;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -203,4 +255,46 @@
   html {
     @apply font-sans;
   }
+}
+
+/* Material Symbols Outlined - for LuxeRealEstate property detail */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* LuxeRealEstate property detail page styles */
+.property-detail-luxe {
+  --luxe-font-heading: 'Comfortaa', cursive;
+  --luxe-font-body: 'Inter', sans-serif;
+  --luxe-font-title-lg: 'Inter', sans-serif;
+  --luxe-font-headline-md: 'Comfortaa', cursive;
+  --luxe-font-display-lg-mobile: 'Comfortaa', cursive;
+  --luxe-font-display-lg: 'Comfortaa', cursive;
+}
+
+.property-detail-luxe {
+  font-family: var(--luxe-font-body);
+}
+
+.property-detail-luxe .font-headline-md,
+.property-detail-luxe .font-display-lg,
+.property-detail-luxe .font-display-lg-mobile,
+.property-detail-luxe .font-headline-sm {
+  font-family: var(--luxe-font-heading);
+}
+
+.property-detail-luxe .font-title-lg {
+  font-family: var(--luxe-font-title-lg);
 }

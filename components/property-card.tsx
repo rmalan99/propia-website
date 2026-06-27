@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Bed, Bath, Maximize, Heart } from "lucide-react";
 
@@ -17,6 +18,7 @@ type PropertyCardProps = {
   priority?: boolean;
   agent?: PropertyCardAgent;
   showDetailLink?: boolean;
+  id?: number;
 };
 
 export function PropertyCard({
@@ -24,10 +26,18 @@ export function PropertyCard({
   priority = false,
   agent,
   showDetailLink = true,
+  id,
 }: PropertyCardProps) {
+  const href = showDetailLink && id ? `/propiedades/${id}` : undefined;
+
   return (
     <Card className="group overflow-hidden border-border transition-shadow hover:shadow-xl">
       <div className="relative h-64 overflow-hidden">
+        {href ? (
+          <Link href={href} className="absolute inset-0 z-10">
+            <span className="sr-only">Ver {property.title}</span>
+          </Link>
+        ) : null}
         <Image
           src={property.image}
           alt={property.title}
@@ -54,7 +64,8 @@ export function PropertyCard({
           size="icon"
           type="button"
           aria-label={`Guardar ${property.title}`}
-          className="absolute top-4 right-4 rounded-full bg-white/90 text-primary shadow-sm hover:bg-white"
+          className="absolute top-4 right-4 z-20 rounded-full bg-white/90 text-primary shadow-sm hover:bg-white"
+          onClick={(e) => e.preventDefault()}
         >
           <Heart className="h-5 w-5" />
         </Button>
@@ -82,11 +93,6 @@ export function PropertyCard({
               <Maximize className="h-4 w-4" /> {property.sqft}
             </span>
           </div>
-          {showDetailLink ? (
-            <Button asChild variant="link" className="h-auto p-0 font-bold text-primary">
-              <a href="#">Ver detalle</a>
-            </Button>
-          ) : null}
         </div>
 
         {agent ? (
