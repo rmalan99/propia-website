@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/rmalan99/propia-website/compare/v0.1.3...v0.1.5) (2026-06-27)
+
+
+### Features
+
+* **home:** add mobile responsive support to all sections ([9a4a3a6](https://github.com/rmalan99/propia-website/commit/9a4a3a6814fca5b70a57399e35d35dae60d1ad17))
+
+### [0.1.4](https://github.com/rmalan99/propia-website/compare/v0.1.3...v0.1.4) (2026-06-27)
+
+
+### Features
+
+* **home:** add mobile responsive support to all sections ([9a4a3a6](https://github.com/rmalan99/propia-website/commit/9a4a3a6814fca5b70a57399e35d35dae60d1ad17))
+
 ### [0.1.3](https://github.com/rmalan99/propia-website/compare/v0.1.2...v0.1.3) (2026-06-27)
 
 ### 0.1.2 (2026-06-27)
