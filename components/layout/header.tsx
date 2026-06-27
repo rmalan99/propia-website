@@ -35,8 +35,6 @@ const navigationItems: {
 }[] = [
   { label: "Inicio", href: "/", icon: Home },
   { label: "Propiedades", href: "/propiedades", icon: Building2 },
-  { label: "Comprar", href: "/comprar", icon: ShoppingCart },
-  { label: "Alquilar", href: "/alquilar", icon: Key },
   { label: "Proyectos", href: "/proyectos", icon: FolderKanban },
   { label: "Agentes", href: "/agentes", icon: Users },
   { label: "Blog", href: "/blog", icon: Newspaper },

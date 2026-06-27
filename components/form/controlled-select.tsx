@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import type { LucideIcon } from "lucide-react"
-import type { FieldValues, Path, RegisterOptions } from "react-hook-form"
-import { Controller, useFormContext } from "react-hook-form"
+import type { LucideIcon } from "lucide-react";
+import type { FieldValues, Path, RegisterOptions } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "@/components/ui/field"
+} from "@/components/ui/field";
 import {
   Select,
   SelectContent,
@@ -17,25 +17,25 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { cn } from "@/lib/utils"
+} from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 export type ControlledSelectOption = {
-  label: string
-  value: string
-}
+  label: string;
+  value: string;
+};
 
 type ControlledSelectProps<TFieldValues extends FieldValues> = {
-  name: Path<TFieldValues>
-  label?: string
-  description?: string
-  placeholder: string
-  options: ControlledSelectOption[]
-  icon?: LucideIcon
-  rules?: RegisterOptions<TFieldValues, Path<TFieldValues>>
-  className?: string
-  triggerClassName?: string
-}
+  name: Path<TFieldValues>;
+  label?: string;
+  description?: string;
+  placeholder: string;
+  options: ControlledSelectOption[];
+  icon?: LucideIcon;
+  rules?: RegisterOptions<TFieldValues, Path<TFieldValues>>;
+  className?: string;
+  triggerClassName?: string;
+};
 
 export function ControlledSelect<TFieldValues extends FieldValues>({
   name,
@@ -48,7 +48,7 @@ export function ControlledSelect<TFieldValues extends FieldValues>({
   className,
   triggerClassName,
 }: ControlledSelectProps<TFieldValues>) {
-  const { control } = useFormContext<TFieldValues>()
+  const { control } = useFormContext<TFieldValues>();
 
   return (
     <Controller
@@ -56,14 +56,17 @@ export function ControlledSelect<TFieldValues extends FieldValues>({
       name={name}
       rules={rules}
       render={({ field, fieldState }) => (
-        <Field className={className} data-invalid={fieldState.invalid || undefined}>
+        <Field
+          className={className}
+          data-invalid={fieldState.invalid || undefined}
+        >
           {label ? <FieldLabel htmlFor={field.name}>{label}</FieldLabel> : null}
           <Select
             name={field.name}
             value={typeof field.value === "string" ? field.value : ""}
             onValueChange={(value) => {
-              field.onChange(value)
-              field.onBlur()
+              field.onChange(value);
+              field.onBlur();
             }}
           >
             <div className="relative">
@@ -77,8 +80,10 @@ export function ControlledSelect<TFieldValues extends FieldValues>({
                 aria-invalid={fieldState.invalid}
                 className={cn(
                   Icon && "pl-11",
-                  fieldState.error && "border-destructive focus:ring-destructive",
-                  triggerClassName
+                  fieldState.error &&
+                    "border-destructive focus:ring-destructive",
+                  "h-11 rounded-xl border-border bg-background text-sm shadow-none",
+                  triggerClassName,
                 )}
               >
                 <SelectValue placeholder={placeholder} />
@@ -95,10 +100,14 @@ export function ControlledSelect<TFieldValues extends FieldValues>({
               </SelectGroup>
             </SelectContent>
           </Select>
-          {description ? <FieldDescription>{description}</FieldDescription> : null}
-          {fieldState.invalid ? <FieldError errors={[fieldState.error]} /> : null}
+          {description ? (
+            <FieldDescription>{description}</FieldDescription>
+          ) : null}
+          {fieldState.invalid ? (
+            <FieldError errors={[fieldState.error]} />
+          ) : null}
         </Field>
       )}
     />
-  )
+  );
 }
