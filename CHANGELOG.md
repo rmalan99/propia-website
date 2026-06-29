@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/rmalan99/propia-website/compare/v0.1.10...v0.1.11) (2026-06-29)
+
+
+### Features
+
+* **home:** Add sell section image assets and placeholders ([f498d96](https://github.com/rmalan99/propia-website/commit/f498d969843ef321ce2ca8278f3b2f6f838aadc2))
+
+
+### Bug Fixes
+
+* **home:** Position blog card image container relatively ([656f6da](https://github.com/rmalan99/propia-website/commit/656f6da563b88271f90f442b155929bae802e0d1))
+
 ### [0.1.10](https://github.com/rmalan99/propia-website/compare/v0.1.9...v0.1.10) (2026-06-29)
 
 ### [0.1.9](https://github.com/rmalan99/propia-website/compare/v0.1.8...v0.1.9) (2026-06-29)
