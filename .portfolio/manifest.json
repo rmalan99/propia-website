@@ -1,0 +1,31 @@
+{
+  "$schema": "https://example.invalid/.portfolio/manifest.schema.json",
+  "version": "1.0.0",
+  "title": "Propia",
+  "type": "web",
+  "category": "product/myself",
+  "description": {
+    "es": "Plataforma inmobiliaria de confianza con búsqueda por IA, propiedades, agentes y franquicias en República Dominicana.",
+    "en": "Trusted Dominican Republic real estate platform featuring AI-powered search, listings, agents, franchises, and a 4-step sell-with-us flow."
+  },
+  "technologies": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Radix UI",
+    "lucide-react",
+    "embla-carousel-react",
+    "react-hook-form",
+    "Geist"
+  ],
+  "links": {
+    "github": "https://github.com/rmalan99/propia-website"
+  },
+  "media": {
+    "kind": "image",
+    "src": "public/portfolio/cover.webp",
+    "alt": "Vista panorámica de villa"
+  }
+}
