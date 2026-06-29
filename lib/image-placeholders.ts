@@ -15,6 +15,14 @@ export const imagePlaceholders: Record<string, string> = {
     "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoKAAcABUB8JYwCdADcrC3dSAD80Qz4FS3VZCMrZwAybBKgFWODUHyPtY3BQZGeIAZX6xRyFoAAAA==",
   "proyecto-legacy-tower":
     "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoKAAcABUB8JaQAAvqouWmsoADiZafzTvfLuOTZhGCvtM/MFMMCbJAAAAA=",
+  "sell-cierre":
+    "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoKAAoAAsBMJZwAAsRDKE1oRrAAAP6X48bIMsxG0Ir8RT3BgO74sW0unv+ip1+wzt6xcAj5Fxq00cyjPO6BgGiUejAhVhtupWTZr4QA",
+  "sell-exposicion":
+    "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoKAAoAAsBMJZwAAuaZ97YAAAD+kbfe8MCRjfGaEt2HjV24xU/qrP3V3RSXyMxiBJapQ96YFwzB/3WAAAA=",
+  "sell-produccion":
+    "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoKAAoAAsBMJQBOgB6RszuDiIAA/vP/I5jKr+yP5z7/JpcpC42dcVnCPGmokWdZ4zcxmiRyPfbW6p/Pp/CCUAAA",
+  "sell-valuacion":
+    "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAQCdASoKAAoAAsBMJYwCsAEO80ObogAA/uufGsA9Xm/i4jAFU1qT0KytPuHDrAA=",
   "vender-agente":
     "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoKAA8ABUB8JZQAAxPCOt1EbAAA/pha5EtsB3uK0vSJrs9NpJluzHIlSzd58k8iNc6s3RaBH49CfcWZ9ol/b6UFAAA=",
   "why-trust":
