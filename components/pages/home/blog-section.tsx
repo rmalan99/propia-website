@@ -94,7 +94,7 @@ export function BlogSection() {
               >
                 <div className="px-2">
                   <Card className="group overflow-hidden rounded-2xl border-border/50 bg-background h-full">
-                    <div className="h-56 overflow-hidden">
+                    <div className="relative h-56 overflow-hidden">
                       <Image
                         src={article.image}
                         alt={article.title}
