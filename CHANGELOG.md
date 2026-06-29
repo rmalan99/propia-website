@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/rmalan99/propia-website/compare/v0.1.3...v0.1.6) (2026-06-29)
+
+
+### Features
+
+* **home:** add 4-step selling process to SellWithUs section ([3edc48b](https://github.com/rmalan99/propia-website/commit/3edc48bedae1a4597e254e38c69d832d03d07481))
+* **home:** add mobile responsive support to all sections ([9a4a3a6](https://github.com/rmalan99/propia-website/commit/9a4a3a6814fca5b70a57399e35d35dae60d1ad17))
+* **home:** convert blog section to carousel with navigation ([a5dc783](https://github.com/rmalan99/propia-website/commit/a5dc7839935b1b56fcece94b3103b4c533a6351f))
+* **home:** convert featured properties to carousel with embla ([820ab07](https://github.com/rmalan99/propia-website/commit/820ab0745498da160fb3576ab81a37d19e4112c0))
+* **home:** redesign sell property section with bento layout ([7d191f2](https://github.com/rmalan99/propia-website/commit/7d191f2490727818aecaa9917bf4f67fc7ea2266))
+* **properties:** convert grid to carousel with navigation controls ([4a0c2b6](https://github.com/rmalan99/propia-website/commit/4a0c2b65ac356cbcf6bf59392583fa727dc963ee))
+
+
+### Bug Fixes
+
+* **home:** fix carousel spacing, add event listeners, reduce section padding ([bb22919](https://github.com/rmalan99/propia-website/commit/bb2291928785a9348cddb55871cc5c282998494e))
+* **home:** improve carousel card sizing and gap ([007384c](https://github.com/rmalan99/propia-website/commit/007384c2d1217f95eccba2c7c00590abdc94bc57))
+* **home:** remove carousel button state to resolve lint error ([e94882d](https://github.com/rmalan99/propia-website/commit/e94882d34fba6be502c67e148090e7600592af8c))
+
 ### [0.1.5](https://github.com/rmalan99/propia-website/compare/v0.1.3...v0.1.5) (2026-06-27)
 
 
