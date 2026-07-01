@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/rmalan99/propia-website/compare/v0.1.11...v0.1.12) (2026-07-01)
+
+
+### Features
+
+* **portfolio:** Add cover image and card manifest ([1d55473](https://github.com/rmalan99/propia-website/commit/1d55473dca9e813006dea18166ef1625f0b189d1))
+
 ### [0.1.11](https://github.com/rmalan99/propia-website/compare/v0.1.10...v0.1.11) (2026-06-29)
 
 
