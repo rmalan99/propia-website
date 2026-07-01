@@ -21,7 +21,8 @@
     "Geist"
   ],
   "links": {
-    "github": "https://github.com/rmalan99/propia-website"
+    "github": "https://github.com/rmalan99/propia-website",
+    "demo": "https://propia-website.vercel.app"
   },
   "media": {
     "kind": "image",
